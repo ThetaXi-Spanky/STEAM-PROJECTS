@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>Interactive STEAM Word Search</title>
   <style>
     body {
-      font-family: 'Segoe UI', sans-serif;
+      font-family: Arial, sans-serif;
       text-align: center;
-      background-color: #f0f0f5;
+      background-color: #f0f0f0;
       padding: 20px;
     }
 
@@ -28,8 +28,8 @@
     }
 
     #puzzle td {
-      width: 32px;
-      height: 32px;
+      width: 30px;
+      height: 30px;
       text-align: center;
       vertical-align: middle;
       font-size: 18px;
@@ -38,18 +38,14 @@
     }
 
     #puzzle td.found {
-      background-color: #a4e3a4;
+      background-color: #90ee90;
       color: black;
-    }
-
-    #words {
-      max-width: 200px;
-      text-align: left;
     }
 
     #words ul {
       list-style-type: none;
-      padding-left: 0;
+      padding: 0;
+      text-align: left;
     }
 
     #words li.found {
@@ -66,7 +62,7 @@
 </head>
 <body>
   <h1>STEAM Word Search</h1>
-  <p>Find all the robotics-related words in the grid below!</p>
+  <p>Find all the robotics-related words in the puzzle below!</p>
 
   <div id="game">
     <div id="puzzle"></div>
@@ -75,20 +71,19 @@
 
   <button onclick="wordfindgame.solve()">Solve Puzzle</button>
 
-  <!-- Include the Wordfind libraries -->
+  <!-- ✅ Load scripts from CDN -->
   <script src="https://cdn.jsdelivr.net/npm/wordfind@1.0.4/lib/wordfind.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/wordfind@1.0.4/lib/wordfindgame.js"></script>
 
   <script>
-    const wordList = [
+    const words = [
       'Robot', 'Sensor', 'Motor', 'Gear', 'Axle',
       'Program', 'Controller', 'Chassis', 'Engineer', 'Build',
       'Code', 'Drive', 'Autonomous', 'Claw', 'Brain',
       'Battery', 'Structure', 'Download', 'Competition', 'Actuator'
     ];
 
-    // Create the game
-    wordfindgame.create(wordList, '#puzzle', '#words');
+    wordfindgame.create(words, '#puzzle', '#words');
   </script>
 </body>
 </html>
