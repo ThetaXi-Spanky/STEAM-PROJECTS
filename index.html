@@ -69,20 +69,23 @@
     <div id="words"></div>
   </div>
 
-   <!-- WORKING JS LIBRARIES (browser-friendly version) -->
-  <script src="https://cdn.jsdelivr.net/gh/ramsteam/wordfind-browser@main/wordfind.js"></script>
-  <script src="https://cdn.jsdelivr.net/gh/ramsteam/wordfind-browser@main/wordfindgame.js"></script>
   <button onclick="wordfindgame.solve()">Solve Puzzle</button>
 
-  <script>
-    const words = [
-      'Robot', 'Sensor', 'Motor', 'Gear', 'Axle',
-      'Program', 'Controller', 'Chassis', 'Engineer', 'Build',
-      'Code', 'Drive', 'Autonomous', 'Claw', 'Brain',
-      'Battery', 'Structure', 'Download', 'Competition', 'Actuator'
-    ];
+  <!-- JavaScript libraries (browser-safe versions) -->
+  <script src="https://cdn.jsdelivr.net/gh/ramsteam/wordfind-browser@main/wordfind.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/ramsteam/wordfind-browser@main/wordfindgame.js"></script>
 
-    wordfindgame.create(words, '#puzzle', '#words');
+  <script>
+    window.onload = function () {
+      const words = [
+        'Robot', 'Sensor', 'Motor', 'Gear', 'Axle',
+        'Program', 'Controller', 'Chassis', 'Engineer', 'Build',
+        'Code', 'Drive', 'Autonomous', 'Claw', 'Brain',
+        'Battery', 'Structure', 'Download', 'Competition', 'Actuator'
+      ];
+
+      wordfindgame.create(words, '#puzzle', '#words');
+    };
   </script>
 </body>
 </html>
