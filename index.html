@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Interactive STEAM Word Search</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      text-align: center;
+      background-color: #f0f0f5;
+      padding: 20px;
+    }
+
+    h1 {
+      color: #2c3e50;
+    }
+
+    #game {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 40px;
+      margin-top: 30px;
+    }
+
+    #puzzle table {
+      border-collapse: collapse;
+    }
+
+    #puzzle td {
+      width: 32px;
+      height: 32px;
+      text-align: center;
+      vertical-align: middle;
+      font-size: 18px;
+      border: 1px solid #999;
+      cursor: pointer;
+    }
+
+    #puzzle td.found {
+      background-color: #a4e3a4;
+      color: black;
+    }
+
+    #words {
+      max-width: 200px;
+      text-align: left;
+    }
+
+    #words ul {
+      list-style-type: none;
+      padding-left: 0;
+    }
+
+    #words li.found {
+      text-decoration: line-through;
+      color: green;
+    }
+
+    button {
+      margin-top: 20px;
+      padding: 10px 20px;
+      font-size: 16px;
+    }
+  </style>
+</head>
+<body>
+  <h1>STEAM Word Search</h1>
+  <p>Find all the robotics-related words in the grid below!</p>
+
+  <div id="game">
+    <div id="puzzle"></div>
+    <div id="words"></div>
+  </div>
+
+  <button onclick="wordfindgame.solve()">Solve Puzzle</button>
+
+  <!-- Include the Wordfind libraries -->
+  <script src="https://cdn.jsdelivr.net/npm/wordfind@1.0.4/lib/wordfind.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/wordfind@1.0.4/lib/wordfindgame.js"></script>
+
+  <script>
+    const wordList = [
+      'Robot', 'Sensor', 'Motor', 'Gear', 'Axle',
+      'Program', 'Controller', 'Chassis', 'Engineer', 'Build',
+      'Code', 'Drive', 'Autonomous', 'Claw', 'Brain',
+      'Battery', 'Structure', 'Download', 'Competition', 'Actuator'
+    ];
+
+    // Create the game
+    wordfindgame.create(wordList, '#puzzle', '#words');
+  </script>
+</body>
+</html>
